@@ -38,4 +38,6 @@ func main() {
 	c.Visit("https://cointelegraph.com/tags/bitcoin")
 
 	fmt.Println(coin_name, coin_price, coin_change)
+
+	
 }
