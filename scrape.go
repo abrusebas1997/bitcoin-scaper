@@ -14,6 +14,7 @@ type coin struct {
 	Name   string `json:"name"`
 	Price  int    `json:"price"`
 	Change string `json:"change"`
+	Description string `json:"description"`
 }
 
 func writeFile(file []byte) {
@@ -57,6 +58,11 @@ func main() {
 	c.OnHTML("#__layout > div > div.layout__wrp > div.header-zone.layout__header > header > div > div.tickers-desktop.header-desktop__tickers > ul > li:nth-child(1) > a > span.tickers-desktop__coin-diff.tickers-desktop__coin-value_down", func(e *colly.HTMLElement) {
 		bitcoin.Change = e.Text
 	})
+
+	c.OnHTML("#__layout > div > div.layout__wrp > main > div > div > div.tag-about.tag-page__about > div.tag-about__desc-col > div > p", func(e *colly.HTMLElement) {
+		bitcoin.Description = e.Text
+	})
+	
 
 	// Before making a request print "Visiting ..."
 	c.OnRequest(func(r *colly.Request) {
