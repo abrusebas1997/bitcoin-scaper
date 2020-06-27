@@ -27,10 +27,10 @@ func writeFile(file []byte) {
 
 func serializeJSON(foo coin) {
 	fmt.Println("Serializing Data", foo)
-	btcJson, _ := json.Marshal(foo)
-	writeFile(btcJson)
+	fooJSON, _ := json.Marshal(foo)
+	writeFile(fooJSON)
 	fmt.Print("Serializing Complete ")
-	fmt.Println(string(btcJson))
+	fmt.Println(string(fooJSON))
 }
 
 // main() contains code adapted from example found in Colly's docs:
