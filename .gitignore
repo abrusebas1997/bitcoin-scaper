@@ -15,4 +15,4 @@
 vendor/
 .vscode/
 makescraper
-scrape/
+./scrape
