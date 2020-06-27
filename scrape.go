@@ -19,7 +19,7 @@ type coin struct {
 }
 
 func writeFile(file []byte) {
-	this := ioutil.WriteFile("result.json", file, 0644)
+	this := ioutil.WriteFile("output.json", file, 0644)
 	if err := this; err != nil {
 		panic(err)
 	}
